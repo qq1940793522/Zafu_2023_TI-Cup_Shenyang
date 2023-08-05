@@ -1,6 +1,9 @@
 --cpu=Star-MC1
 ".\objects\isr.o"
 ".\objects\main.o"
+".\objects\laser.o"
+".\objects\tm1638.o"
+".\objects\jy901s.o"
 ".\objects\zf_common_clock.o"
 ".\objects\zf_common_debug.o"
 ".\objects\zf_common_fifo.o"

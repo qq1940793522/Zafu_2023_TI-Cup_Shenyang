@@ -34,8 +34,9 @@
 ********************************************************************************************************************/
 
 #include "isr.h"
+#include "laser.h"
 
-uint8 dat;
+uint8 dat = 0;
 
 //-------------------------------------------------------------------------------------------------------------------
 // 函数简介     TIM1 的定时器更新中断服务函数 启动 .s 文件定义 不允许修改函数名称
@@ -196,7 +197,7 @@ void UART3_IRQHandler (void)
     {
         // 此处编写用户代码
         // 务必填写数据或者关闭中断 否则会一直触发串口发送中断
-
+		
         // 此处编写用户代码
         UART_ClearInterruptStatus(UART3, UART_INT_TX_EMPTY);                    // 清除中断标志位
     }
@@ -204,7 +205,8 @@ void UART3_IRQHandler (void)
     {
         // 此处编写用户代码
         // 务必读取数据或者关闭中断 否则会一直触发串口接收中断
-
+		extern void uart_rx_interrupt_handler (void);
+        uart_rx_interrupt_handler();
         // 此处编写用户代码
         UART_ClearInterruptStatus(UART3, UART_INT_RX_DONE);                     // 清除中断标志位
     }
@@ -254,11 +256,12 @@ void UART5_IRQHandler (void)
     if(UART_INT_RX_DONE & UART_GetInterruptStatus(UART5))                       // 串口接收缓冲中断
     {
         // -----------------* 摄像头初始化 串口 预置中断处理函数 *-----------------
-        camera_uart_handler();
+//        camera_uart_handler();
         // -----------------* 摄像头初始化 串口 预置中断处理函数 *-----------------
         // 此处编写用户代码
         // 务必读取数据或者关闭中断 否则会一直触发串口接收中断
-
+		extern void uart5_rx_interrupt_handler (void);
+        uart5_rx_interrupt_handler();
         // 此处编写用户代码
         UART_ClearInterruptStatus(UART5, UART_INT_RX_DONE);                     // 清除中断标志位
     }
@@ -433,10 +436,12 @@ void EXTI15_10_IRQHandler (void)
     if(EXTI_LINE_10 & EXTI_GetLineStatus(EXTI))                                 // line10 触发
     {
         // -----------------* DM1XA 声/反馈信号 预置中断处理函数 *-----------------
-        dm1xa_sound_callback();
+        //dm1xa_sound_callback();
         // -----------------* DM1XA 声/反馈信号 预置中断处理函数 *-----------------
         // 此处编写用户代码 (A10/B10..G10) 引脚触发
-
+		
+		while(gpio_get_level(A10) == 0)
+		
         // 此处编写用户代码 (A10/B10..G10) 引脚触发
         EXTI_ClearLineStatus(EXTI, EXTI_LINE_10);                               // 清除 line10 触发标志
     }

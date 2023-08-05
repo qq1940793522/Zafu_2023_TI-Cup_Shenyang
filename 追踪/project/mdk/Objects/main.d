@@ -1,4 +1,5 @@
 ./objects/main.o: ..\user\src\main.c \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\..\libraries\zf_common\zf_common_headfile.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -96,4 +97,5 @@
   ..\..\libraries\zf_device\zf_device_type.h \
   ..\..\libraries\zf_device\zf_device_virtual_oscilloscope.h \
   ..\..\libraries\zf_device\zf_device_wifi_uart.h \
-  ..\..\libraries\zf_device\zf_device_wireless_uart.h
+  ..\..\libraries\zf_device\zf_device_wireless_uart.h ..\code\laser.h \
+  ..\code\TM1638.h ..\code\JY901S.h

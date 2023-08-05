@@ -96,4 +96,4 @@
   ..\..\libraries\zf_device\zf_device_type.h \
   ..\..\libraries\zf_device\zf_device_virtual_oscilloscope.h \
   ..\..\libraries\zf_device\zf_device_wifi_uart.h \
-  ..\..\libraries\zf_device\zf_device_wireless_uart.h
+  ..\..\libraries\zf_device\zf_device_wireless_uart.h ..\code\laser.h

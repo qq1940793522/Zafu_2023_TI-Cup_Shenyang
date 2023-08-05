@@ -414,6 +414,21 @@
               <FileType>5</FileType>
               <FilePath>..\code\本文件夹作用.txt</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\laser.c</FilePath>
+            </File>
+            <File>
+              <FileName>TM1638.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\TM1638.c</FilePath>
+            </File>
+            <File>
+              <FileName>JY901S.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\JY901S.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
